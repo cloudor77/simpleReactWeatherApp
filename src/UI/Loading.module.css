@@ -1,0 +1,12 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 30vh;
+}
+
+.loading h4 {
+  text-transform: uppercase;
+  color: var(--main-fontcolor);
+  font-size: 3em;
+}

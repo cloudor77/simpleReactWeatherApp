@@ -1,0 +1,41 @@
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 6em;
+}
+.navbar > * {
+  color: var(--main-fontcolor);
+  /* text-transform: uppercase; */
+  font-size: 1.5em;
+}
+
+.navbar h1 {
+  font-size: 1.7em;
+}
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar li {
+  margin: 0em 2.75em;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+.navbar a:link,
+.navbar a:visited,
+.navbar a:hover {
+  color: var(--main-fontcolor);
+}
+
+@media screen and (max-width: 1200px) {
+  .navbar {
+    flex-direction: column;
+  }
+  .navbar > * {
+    font-size: 1em;
+  }
+}

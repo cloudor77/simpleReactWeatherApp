@@ -1,0 +1,140 @@
+.app {
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.app > * {
+  color: var(--main-fontcolor);
+}
+
+.location h4 {
+  font-size: 3.75em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.location p {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.weathercode {
+  position: relative;
+  left: 55%;
+  top: 10%;
+  transform-origin: 0 0;
+  transform: rotate(269deg);
+}
+
+.weathercode p {
+  font-size: 1.25em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.temperatures {
+  display: flex;
+  width: 60%;
+  justify-content: space-around;
+}
+
+.max > p {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.temps {
+  font-weight: 900;
+  font-size: 1.8em;
+}
+
+.tempsdesc {
+  font-size: 1.4em;
+  letter-spacing: 0.1em;
+}
+
+@media screen and (max-width: 1200px) {
+  .app {
+    justify-content: space-evenly;
+    overflow: hidden;
+  }
+
+  .location h4 {
+    font-size: 2.75em;
+  }
+
+  .location p {
+    text-align: center;
+    font-size: 1em;
+  }
+
+  .weathercode {
+    transform-origin: 0 0;
+    left: 0%;
+    top: 0%;
+    transform: rotate(0);
+  }
+
+  .weathercode p {
+    text-align: center;
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .temperatures {
+    width: 100%;
+  }
+
+  .temps {
+    font-weight: 600;
+    font-size: 1em;
+  }
+
+  .tempsdesc {
+    font-size: 1em;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .app {
+    height: 70vh;
+  }
+  .location h4 {
+    font-size: 1.75em;
+  }
+
+  .weathercode {
+    transform-origin: 0 0;
+    left: 0%;
+    top: 0%;
+    transform: rotate(0);
+  }
+
+  .weathercode p {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 00;
+    text-transform: uppercase;
+  }
+
+  .temps {
+    font-weight: 600;
+    font-size: 1.7em;
+  }
+
+  .tempsdesc {
+    font-size: 1.7em;
+    font-weight: 600;
+    letter-spacing: 0em;
+  }
+}
