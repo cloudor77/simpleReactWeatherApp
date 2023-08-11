@@ -15,27 +15,27 @@
 }
 
 .location h4 {
-  font-size: 3.75em;
+  font-size: 3.75rem;
   font-weight: 800;
   text-transform: uppercase;
 }
 
 .location p {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   text-transform: uppercase;
   font-weight: 600;
 }
 
 .weathercode {
   position: relative;
-  left: 55%;
-  top: 10%;
+  left: 48%;
+  top: 0%;
   transform-origin: 0 0;
   transform: rotate(269deg);
 }
 
 .weathercode p {
-  font-size: 1.25em;
+  font-size: 1.75rem;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -53,12 +53,12 @@
 
 .temps {
   font-weight: 900;
-  font-size: 1.8em;
+  font-size: 1.8rem;
 }
 
 .tempsdesc {
-  font-size: 1.4em;
-  letter-spacing: 0.1em;
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
 }
 
 @media screen and (max-width: 1200px) {
@@ -68,12 +68,13 @@
   }
 
   .location h4 {
-    font-size: 2.75em;
+    font-size: 2.75rem;
+    text-align: center;
   }
 
   .location p {
     text-align: center;
-    font-size: 1em;
+    font-size: 2rem;
   }
 
   .weathercode {
@@ -85,56 +86,91 @@
 
   .weathercode p {
     text-align: center;
-    font-size: 1em;
+    /* font-size: 1rem; */
     font-weight: 600;
     text-transform: uppercase;
   }
   .temperatures {
+    display: flex;
     width: 100%;
   }
 
   .temps {
     font-weight: 600;
-    font-size: 1em;
+    font-size: 2rem;
   }
 
   .tempsdesc {
-    font-size: 1em;
+    font-size: 1.75rem;
     font-weight: 600;
-    letter-spacing: 0em;
+    letter-spacing: 0rem;
   }
 }
 
-@media screen and (max-height: 800px) {
-  .app {
-    height: 70vh;
-  }
+@media screen and (max-width: 600px) {
   .location h4 {
-    font-size: 1.75em;
+    font-size: 2rem;
+  }
+  .location p {
+    font-size: 1.25rem;
   }
 
+  .temperatures {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 3rem;
+  }
+
+  .temperatures > div {
+    margin: 1.35rem 0em;
+  }
+
+  .temps {
+    font-size: 1.5rem;
+  }
+
+  .tempsdesc {
+    font-size: 1.15rem;
+  }
+}
+
+@media screen and (max-height: 760px) {
+  .app {
+    max-height: 90vh;
+  }
+
+  .location h4 {
+    font-size: 1.25rem;
+  }
+  .location p {
+    font-size: 1rem;
+  }
+
+  .temperatures {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .temperatures > div {
+    margin: 0.8rem 0em;
+  }
+
+  .temps {
+    font-size: 1.15rem;
+  }
+
+  .tempsdesc {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 1600px) {
   .weathercode {
     transform-origin: 0 0;
     left: 0%;
     top: 0%;
     transform: rotate(0);
-  }
-
-  .weathercode p {
-    text-align: center;
-    font-size: 1.5em;
-    font-weight: 00;
-    text-transform: uppercase;
-  }
-
-  .temps {
-    font-weight: 600;
-    font-size: 1.7em;
-  }
-
-  .tempsdesc {
-    font-size: 1.7em;
-    font-weight: 600;
-    letter-spacing: 0em;
   }
 }

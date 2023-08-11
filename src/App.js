@@ -6,7 +6,7 @@ import WeatherSegment from "./components/Weather";
 import Navbar from "./UI/Navbar";
 import Loading from "./UI/Loading";
 // Helpers
-import { url, findMin as min, findMax as max } from "./helpers/helpers";
+import { findMin as min, findMax as max } from "./helpers/helpers";
 import { pickTheRighWeatherCode as weatherStatus } from "./tools/weatherCodes";
 // import { findMin as min } from "./helpers/helpers";
 // import { findMax as max } from "./helpers/helpers";
@@ -17,20 +17,28 @@ import Card from "./UI/Card";
 function App() {
   const [weatherData, setWeatherData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  // const [latitude, setLatitude] = useState();
+  // const [longtitude, setLongtitude] = useState();
   // const [error, setError] = useState(false);
 
-  const getData = async () => {
-    const response = await fetch(url, {
-      method: "GET",
-      body: JSON.stringify(),
-    });
+  const getData = async (lat, lon) => {
+    const response = await fetch(
+      `https://api.open-meteo.com/v1/dwd-icon?latitude=${lat}&longitude=${lon}&current_weather&hourly=temperature_2m,cloudcover,cloudcover_low,rain&daily=temperature_2m_max,temperature_2m_min&timezone=auto&current_weather=true`,
+      {
+        method: "GET",
+        body: JSON.stringify(),
+      }
+    );
 
     if (!response.ok) {
       throw new Error(`There was an unexpected error${response.status}`);
     }
 
     const data = await response.json();
-    console.log(data);
+    console.log(
+      data.current_weather.windspeed,
+      data.current_weather.weathercode
+    );
 
     try {
       return setWeatherData({
@@ -50,17 +58,15 @@ function App() {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      getData();
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          getData(position.coords.latitude, position.coords.longitude);
+        });
+      } else {
+        getData(53.33, -6.25);
+      }
     }, 1500);
   }, []);
-
-  window.addEventListener("beforeunload", (event) => {
-    getData();
-  });
-
-  window.addEventListener("unload", (event) => {
-    getData();
-  });
 
   return (
     <Card>
