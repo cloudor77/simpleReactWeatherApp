@@ -63,7 +63,7 @@ function App() {
           getData(position.coords.latitude, position.coords.longitude);
         });
       } else {
-        getData(53.33, -6.25);
+        getData(50.09, 14.42);
       }
     }, 1500);
   }, []);
